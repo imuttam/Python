@@ -11,8 +11,9 @@ n = len(lst)
 for i in range(n):
     for j in range(n-1):
         if lst[j] > lst[i]:
-            temp = lst[i]
-            lst[i] = lst[j]
-            lst[j] = temp
+            # temp = lst[i]
+            # lst[i] = lst[j]
+            # lst[j] = temp
+            lst[j],lst[i] = lst[i],lst[j]
 
 print(f'list after sorting: {lst}')
