@@ -11,12 +11,10 @@ for i in range(2, number_range):
             flag = False
             break
 
-        else:
-            flag  = True
     if flag:
         nums.append(i)
 
 
-print(nums)
+print(f'List of prime numbers upto range {number_range}: {nums}')
 
 
