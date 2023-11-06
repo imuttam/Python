@@ -67,6 +67,9 @@ Printing a List in Reverse Order
 cars.reverse()
 print(cars)
 
+Using range() to Make a List of Numbers
+numbers = list(range(1,6))
+
 Nested Lists
 
 asia = [["India", "Japan", "Korea"], ["Srilanka", "Myanmar", "Thailand"], ["Cambodia", "Vietnam", "Israel"]]
