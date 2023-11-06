@@ -3,28 +3,41 @@
 num = int(input("Enter a number to get its prime factor: "))
 
 def isPrime(n):
-    for i in range(2,n):
+    r = int(n**0.5+1)
+    for i in range(2, r):
         if n % i == 0:
             return False
             break
     return True
 
 def factor(num):
+
     lst = []
-    for i in range(2,num):
+    for i in range(2, num//2):
         if num%i == 0:
             lst.append(i)
-    lst = lst[::-1]
-    for numbers in lst:
-        if isPrime(numbers):
-            return numbers
+    # lst = lst[::-1]
+    # for numbers in lst:
+    #     if isPrime(numbers):
+    #         return numbers
+    return lst
 
-
-# prime_factors = factor(num)
-
-# for number in prime_factors:
-#     if isPrime(number):
-#         print(f'greates prime factor of {num} is: {number}')
-#         break
 
 print(factor(num))
+
+number = int(input("Enter a number to get its prime factor: "))
+
+def calculate(number):
+    i = 2
+    factors = []
+    while i * i <= number:
+        if not number % i == 0:
+            i += 1
+        else:
+            number = number // i
+            factors.append(i)
+    if number > 1:
+        factors.append(number)
+    return (factors)
+
+print(calculate(number))
