@@ -1,17 +1,18 @@
-from app import db
+from app import db, app
+from datetime import datetime
 
 class Report(db.Model):
-    id =        db.Column("id",db.Integer, primary_key=True)
-    date =      db.Column('date', db.DateTime)
-    voice_2G  = db.Column('voice_2G' ,db.Integer,  nullable=False)
-    voice_3G  = db.Column('voice_3G' ,db.Integer, nullable=False)
-    volte =     db.Column('volte', db.Float, nullable=False)
-    data_2G =   db.Column('data_2G', db.Float, nullable=False)
-    data_3G =   db.Column('data_3G', db.Float, nullable=False)
-    data_4G =   db.Column('data_4G', db.Float, nullable=False)
-    vlrcount =   db.Column('vlrcount' ,db.Integer,  nullable=False)
-    total_voice = db.Column('total_voice' ,db.Integer,  nullable=False)
-    total_data = db.Column('total_data', db.Float, nullable=False)
+    id =        db.Column(db.Integer, primary_key=True)
+    date =      db.Column(db.DateTime)
+    voice_2G  = db.Column(db.Integer,  nullable=False)
+    voice_3G  = db.Column(db.Integer, nullable=False)
+    volte =     db.Column(db.Float, nullable=False)
+    data_2G =   db.Column(db.Float, nullable=False)
+    data_3G =   db.Column(db.Float, nullable=False)
+    data_4G =   db.Column(db.Float, nullable=False)
+    vlrcount =  db.Column(db.Integer,  nullable=False)
+    total_voice = db.Column(db.Integer,  nullable=False)
+    total_data = db.Column(db.Float, nullable=False)
 
 
     def __repr__(self):

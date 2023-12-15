@@ -1,10 +1,20 @@
 import requests
+import json
 
-BASE_URL = 'https://bhagavadgitaapi.in/'
+BASE_URL = 'https://bhagavadgitaapi.in/slok'
 
-response = requests.get(f'{BASE_URL}/get-chapters.html', headers={"Content-Type":"application/json"})
+chapter = int(input('Enter chapter: '))
+slok = int(input('Enter slok: '))
 
-# print(response.status_code)
-json_data = response.json()
+response = requests.get(f'{BASE_URL}/{chapter}/{slok}')
 
-print(json_data)
+json_data = json.loads(response.content.decode('utf-8'))
+
+verse = json_data['slok']
+meaning = json_data['chinmay']
+sankar = json_data['sankar']
+
+print(verse)
+print()
+print(meaning)
+print(sankar)

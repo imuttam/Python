@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+
+{% block content %}
+  <h2>Daily Report </h2>
+  <div class="row">
+    {% for row in report %}
+    <div class="card" style="width: 40rem;">
+      <div class="card-header">
+      </div>
+      <div class="col-sm-4">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{row.date}}</li>
+        <li class="list-group-item">{{row.voice_2G }}</li>
+        <li class="list-group-item">{{row.voice_3G }}</li>
+        <li class="list-group-item">{{row.vlrcount}}</li>
+        <li class="list-group-item">{{row.volte}}</li>
+        <li class="list-group-item">A third item</li>
+      </ul>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+
+{% endblock %}
