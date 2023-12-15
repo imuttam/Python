@@ -12,7 +12,8 @@ counter = 0
 def index():
     global counter
     counter +=1
-    report = Report.query.all()
+    # report = Report.query.all()
+    report = Report.query.order_by(Report.date.desc()).all()
     return render_template('index.html', title='Home', utc_dt=today,counter=counter,report=report)
 
 # @app.route('/')
